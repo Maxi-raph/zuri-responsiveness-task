@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zuri</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Lexend+Deca&family=Poppins:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    body::before{
+        content: '';
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-color:hsl(0, 100%, 74%);
+        background-image:url(https://ik.imagekit.io/raph/image/bg-intro-desktop__1__pBsubHsv7.png?ik-sdk-version=javascript-1.4.3&updatedAt=1655179177416);
+    }
+    *,*:before,*:after{
+        box-sizing: border-box;
+    }
+    .container{
+        display: flex;
+        justify-content:center;
+        width: 90%;
+        margin: 100px auto 100px auto;
+    }
+    .registration-text{
+        width: 490px;
+        height: 300px;
+        margin-top:210px;
+        margin-right: 10px;
+    }
+    .registration-heading h1{
+        font-family: 'poppins',sans-serif;
+        color: white;
+        font-size: 41px;
+        letter-spacing: 1px;
+        margin: 0;
+        line-height: 3rem;
+        width: 400px;
+        margin-top: 20px;
+    }
+    .registration-paragraph{
+        font-family: 'poppins',sans-serif;
+        margin-top:25px;
+        width:470px;
+        color:hsl(0, 9%, 91%);
+        font-size: 14px;
+        line-height: 1.5rem;
+    }
+    .registration-form{
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 10px;
+    }
+    .description{
+        width: 490px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color:hsl(248, 32%, 49%);
+        margin-top: 10px;
+        border-radius: 10px;
+        box-shadow: 0px 6px 0px hsla(0, 0%, 39%, 0.479);
+    }
+    .description b{
+        color: white;
+        font-size: 14px;
+    }
+    .description p{
+        font-family: 'poppins',sans-serif;
+        font-size: 14px;
+        color:hsl(0, 9%, 91%);
+    }
+    .form-box{
+        width: 490px;
+        background-color: white;
+        border-radius: 10px;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        box-shadow: 0px 6px 0px hsla(0, 0%, 39%, 0.479);
+    }
+    .input-1{
+        margin: 10px 0px 10px 0px;
+        width: 400px;
+    }
+    .input-2{
+        margin: 10px 0px 10px 0px;
+        width: 400px;
+    }
+    .input-3{
+        margin: 10px 0px 10px 0px;
+        width: 400px;
+    }
+    .input-4{
+        margin: 10px 0px 10px 0px;
+        width: 400px;
+    }
+    input{
+        width: 400px;
+        height: 50px;
+        border-radius: 5px;
+        padding-left: 10px;
+        font-weight: 700;
+        font-family: 'poppins',sans-serif;
+        border: 1px solid lightgray;
+        outline-color: rgb(131, 131, 131);
+        
+    }
+
+    input:required:invalid{
+        outline: 0;
+        border: 3px solid hsl(0, 100%, 74%);
+        background-image: url(https://ik.imagekit.io/raph/image/icon-error_d1K0udofO.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1655179179589);
+        background-repeat: no-repeat;
+        background-position: right;
+        background-origin:content-box;
+    }
+    input:invalid+span{
+        display: inline;
+        float: right;
+        color: hsl(0, 100%, 74%);
+        font-size: 14px;
+        font-family: 'poppins',sans-serif;
+    }
+    input:valid{
+        border: 1px solid lightgray;
+        outline-color: rgb(131, 131, 131);
+    }
+    span{
+        display: none;
+    }
+
+    .submit .submit-btn{
+        margin-top: 10px;
+        border-radius: 5px;
+        font-weight: 400;
+        font-size: 15px;
+        font-family: 'Poppins',sans-serif;
+        color: hsl(0, 29%, 97%);
+        background-color: hsl(154, 59%, 51%);
+        border: 0;
+        padding:15px 120px;
+        box-shadow: 0px 2px 0px hsla(0, 0%, 17%, 0.479);
+    }
+    .terms-services{
+        margin-top: 12px;
+        font-family: 'poppins',sans-serif;
+        font-size: 10px;
+        margin-bottom: 40px;
+    }
+    .terms-services p{
+        display: inline;
+        color:rgb(206, 204, 204) ;
+    }
+    .terms-services a{
+        text-decoration: none;
+        color: hsl(0, 55%, 60%);
+    }
+    @media(max-width:1600px){
+    .container{
+        align-items:center;
+        justify-content: space-around;
+    }
+       .registration-text{
+        margin-bottom: 100px;
+    }
+    }
+    @media(max-width:1440px){
+        .container{
+            justify-content: center
+        }
+        .registration-text{
+            padding-left:20px ;
+        }
+    }
+    @media(max-width:1200px){
+    .container{
+        width: 100%;
+        align-items:center;
+        justify-content: space-between;
+    }
+    .registration-text{
+        margin-bottom: 100px;
+    }
+    }
+    @media(max-width:1000px){
+    .container{
+        flex-direction: column;
+        align-items:center;
+        margin-top: 0px;
+        width: 90%;
+    } 
+    .registration-text{
+        margin-bottom: 0px;
+        width: 490px;
+        margin-left: 15px;
+        text-align: center;
+    }
+    .registration-heading h1{
+        margin: 10px auto;
+    }
+    }
+    @media only screen and (max-width:720px){
+    .container{
+        flex-direction: column;
+        align-items:center;
+        width: 90%;
+        padding-top: 10px;
+    }
+    .registration-text{
+        width: 330px;
+        height: 200px;
+        margin-top: 20px; 
+        margin-bottom: 30px;
+    }
+    .registration-heading h1{
+        font-size: 22px;
+        font-weight:700;
+        width: 240px;
+        line-height: 1.8rem;
+        letter-spacing: 2px;
+        text-align: center;
+        margin: 10px auto 20px auto;
+    }
+    .registration-paragraph{
+        width: 330px;
+        font-weight:400;
+        font-size: 13px;
+        text-align: center;
+        line-height: 1.5rem;
+        letter-spacing: 0.1rem;
+        margin:10px auto 0px auto;
+    }
+    .registration-form{
+        margin-top: 0px;
+        margin-bottom: 60px;
+    }
+    .description{
+        width: 320px;
+        margin-right: 10px;
+        height: 80px;
+        padding: 30px 70px;
+        text-align: center;
+        line-height: 1.3rem;
+    }
+    .description p{
+        font-size:13px;
+    }
+    .description b{
+        font-size:13px;
+    }
+    .form-box{
+        width: 320px;
+    }
+    input{
+        width: 280px;
+    }
+    .input-1{
+        width: 280px;
+    }
+    .input-2{
+        width: 280px;
+    }
+    .input-3{
+        width: 280px;
+    }
+    .input-4{
+        width: 280px;
+    }
+    .submit .submit-btn{
+        width: 280px;
+        padding: 10px 10px;
+    }
+    .terms-services{
+        width:220px;
+        line-height: 1.2rem;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    }
+</style>
+<body>
+    <main>
+    <section class="container">
+        <div class="registration-text">
+            <div class="registration-heading">
+                <h1>Learn to code by watching others</h1>
+            </div>
+            <div class="registration-paragraph">
+                <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</p>
+            </div>
+        </div>
+        <div class="registration-form">
+            <div class="description">
+                <p><b>Try it free 7 days </b>then $20/mo. thereafter</p>
+            </div>
+            <div class="form-box">
+                <div class="input-1">
+                    <label for="first-name">
+                        <input type="text" name="first-name"  placeholder="First Name" required>
+                        <span>First Name cannot be empty</span>
+                    </label>
+                </div>
+                <div class="input-2">
+                    <label for="last-name">
+                        <input type="text" name="last-name"  placeholder="Last Name" required>
+                        <span>Last Name cannot be empty</span>
+                    </label>
+                </div>
+                <div class="input-3">
+                    <label for="email">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                        <span>Looks like this is not an email</span>
+                    </label>
+                </div>
+                <div class="input-4">
+                    <label for="password">
+                        <input type="password" name="password" placeholder="Password" required>
+                        <span>Password cannot be empty</span>
+                    </label>
+                </div>
+                <div class="submit">
+                    <button type="submit" class="submit-btn">CLAIM YOUR FREE TRIAL</button>
+                </div>
+                <div class="terms-services">
+                   <p>By clicking the button,you are agreeing to our</p>
+                   <a href="#">Terms and Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+</body>
+    
+</html>
